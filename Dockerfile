@@ -1,7 +1,10 @@
 FROM vimagick/scrapyd
 
 RUN apt-get update -y \
-&& apt-get install -y libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev python-dev wget git tesseract-ocr
+&& apt-get install -y libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev python-dev \
+&& wget git tesseract-ocr imagemagick \
+&& pip install ipython \
+&& pip install pillow
 
 RUN wget http://effbot.org/downloads/Imaging-1.1.7.tar.gz \
 && tar xzf Imaging-1.1.7.tar.gz \
